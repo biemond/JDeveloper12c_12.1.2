@@ -1,0 +1,7 @@
+.svn
+.DS_Store
+.data/
+deploy/
+classes/
+target/
+

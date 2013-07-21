@@ -1,0 +1,204 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.adfdt.controller.migrate.TrinidadDatabindingsProjectMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.adfdtinternal.dvt.datapresdt.migration.DVTDataMapMigrator" v="11.1.1.1.0.3"/>
+      <value n="oracle.adfdtinternal.model.ide.security.wizard.FormPageMigrator" v="11.1.1.0.0"/>
+      <value n="oracle.adfdtinternal.model.ide.security.wizard.JpsFilterMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdtinternal.view.common.migration.wizards.MigrationHelper" v="11.1.1.1.0.3"/>
+      <value n="oracle.adfdtinternal.view.rich.migration.ComponentIdNodeMigratorHelper" v="11.1.1.1.0.01"/>
+      <value n="oracle.adfdtinternal.view.rich.migration.FacesLibraryVersionMigrator" v="11.1.1.1.0.1"/>
+      <value n="oracle.ide.model.Project" v="12.1.2.0.0"/>
+      <value n="oracle.ide.model.ResourcePathsMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.ideimpl.model.TechnologyScopeUpdateMigrator" v="11.1.2.0.0.4"/>
+      <value n="oracle.jbo.dt.jdevx.deployment.JbdProjectMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jbo.dt.jdevx.ui.appnav.APProjectMigrator" v="11.1.1.0.1.5"/>
+      <value n="oracle.jbo.dt.migrate.ResourceBundlePathMigrator" v="11.1.1.0.1.5"/>
+      <value n="oracle.jbo.dt.migration.ServiceInterfaceMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.dbmodeler.Migration" v="12.1.1.0.0"/>
+      <value n="oracle.jdeveloper.ejb.EjbMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.library.ProjectLibraryMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.model.OutputDirectoryMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.deploy.jps.JpsDataMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.deploy.migrators.DeploymentMigrator" v="12.1.2.0.1"/>
+      <value n="oracle.jdevimpl.jsp.JspMigrator" v="11.1.1"/>
+      <value n="oracle.jdevimpl.offlinedb.migration.OfflineDBProjectMigrator" v="12.1.1.0.0"/>
+      <value n="oracle.jdevimpl.resourcebundle.XliffAddin$XliffMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.webapp.jsp.libraries.JspLibraryMigrator" v="11.1.1.1.4"/>
+      <value n="oracle.jdevimpl.webapp.jsp.taglibraries.trinidad.migration.TrinidadLibraryVersionMigrator" v="11.1.1.1.0.1"/>
+      <value n="oracle.jdevimpl.webapp.WebAppContentSetNodeMigratorHelper" v="11.1.1"/>
+      <value n="oracle.jdevimpl.webapp.WebAppProjectNodeMigratorHelper" v="12.1.2.0.0"/>
+      <value n="oracle.jdevimpl.webservices.rest.migration.RestLibraryMigrator" v="12.1.1.0.0"/>
+      <value n="oracle.jdevimpl.webservices.rest.migration.RestPathMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jdevimpl.webservices.WebServicesMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.xml.wl.WeblogicMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.modeler.bmmigrate.management.Migration" v="11.1.1.1.0"/>
+      <value n="oracle.toplink.workbench.addin.migration.PersistenceProjectMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
+      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
+   </list>
+   <value n="defaultPackage" v="nl.amis.hr"/>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+*"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/main/scripts/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+pom.xml"/>
+               </list>
+               <list n="url-path">
+                  <url path="."/>
+               </list>
+            </hash>
+         </list>
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path"/>
+      </hash>
+   </hash>
+   <hash n="oracle.ide.model.TechnologyScopeConfiguration">
+      <list n="technologyScope">
+         <string v="Java"/>
+         <string v="Maven"/>
+         <string v="XML"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <value n="internalEncoding" v="ASCII"/>
+      <value n="webIANAEncoding" v="US-ASCII"/>
+   </hash>
+   <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
+      <url n="pomfileURL" path="pom.xml"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="RestFulOWSM-Ear-webapp"/>
+      <value n="j2eeWebContextRoot" v="RestFulOWSM-Ear-context-root"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="url-path">
+            <url path="src/test/java/"/>
+            <url path="src/main/java/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="nl.amis.hr:WebService:1.0-SNAPSHOT:war"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}nl/amis/hr/Ear/1.0-SNAPSHOT/Ear-1.0-SNAPSHOT.ear"/>
+               </list>
+               <value n="description" v="nl.amis.hr:Ear:1.0-SNAPSHOT:ear"/>
+               <value n="id" v="nl.amis.hr:Ear:1.0-SNAPSHOT:ear"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}nl/amis/hr/Model/1.0-SNAPSHOT/Model-1.0-SNAPSHOT.jar"/>
+               </list>
+               <value n="description" v="nl.amis.hr:Model:1.0-SNAPSHOT:jar"/>
+               <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}nl/amis/hr/WebService/1.0-SNAPSHOT/WebService-1.0-SNAPSHOT.war"/>
+               </list>
+               <value n="description" v="nl.amis.hr:WebService:1.0-SNAPSHOT:war"/>
+               <value n="id" v="nl.amis.hr:WebService:1.0-SNAPSHOT:war"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}com/oracle/weblogic/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT/12.1.2-0-0/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT-12.1.2-0-0.jar"/>
+               </list>
+               <value n="description" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:12.1.2-0-0:jar"/>
+               <value n="id" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:12.1.2-0-0:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}com/oracle/weblogic/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT/[12.1.2,12.1.3)/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT-[12.1.2,12.1.3).jar"/>
+               </list>
+               <value n="description" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[12.1.2,12.1.3):jar"/>
+               <value n="id" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[12.1.2,12.1.3):jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}com/oracle/weblogic/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT/[1.1.2,12.1.3)/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT-[1.1.2,12.1.3).jar"/>
+               </list>
+               <value n="description" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.2,12.1.3):jar"/>
+               <value n="id" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.2,12.1.3):jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}com/oracle/weblogic/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT/[1.1.,12.1.3)/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT-[1.1.,12.1.3).jar"/>
+               </list>
+               <value n="description" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.,12.1.3):jar"/>
+               <value n="id" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.,12.1.3):jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}com/oracle/weblogic/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT/[1.1.0,12.1.3)/org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT-[1.1.0,12.1.3).jar"/>
+               </list>
+               <value n="description" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.0,12.1.3):jar"/>
+               <value n="id" v="com.oracle.weblogic:org.apache.openjpa_1.4.0.0_1-1-1-SNAPSHOT:[1.1.0,12.1.3):jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="nl.amis.hr:WebService:1.0-SNAPSHOT:war"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="target/classes/"/>
+   </hash>
+</jpr:project>

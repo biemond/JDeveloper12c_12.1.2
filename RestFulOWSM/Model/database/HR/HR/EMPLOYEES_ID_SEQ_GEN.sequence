@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
+  <name>EMPLOYEES_ID_SEQ_GEN</name>
+  <incrementBy>50</incrementBy>
+  <minValue>1</minValue>
+  <schema>
+    <name>HR</name>
+  </schema>
+  <startWith>50</startWith>
+</sequence>
