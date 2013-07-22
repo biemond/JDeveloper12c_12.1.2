@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>nl.amis.hr</groupId>
-    <artifactId>Ear</artifactId>
+    <artifactId>RestFulOWSMEar</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Project for Ear</description>
     <packaging>ear</packaging>
@@ -39,12 +39,12 @@
                             <goal>deploy</goal>
                         </goals>
                         <configuration>
-                            <adminurl>t3://127.0.0.1:7101</adminurl>
-                            <user>weblogic</user>
-                            <password>weblogic1</password>
-                            <middlewareHome>/Users/edwin/Oracle/JDevMiddleware12.1.2</middlewareHome>
+                            <adminurl>${wls.adminurl}</adminurl>
+                            <user>${wls.user}</user>
+                            <password>${wls.password}</password>
+                            <middlewareHome>${wls.middlewareHome}</middlewareHome>
                             <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
-                            <targets>DefaultServer</targets>
+                            <targets>${wls.targets}</targets>
                             <verbose>true</verbose>
                             <name>${project.build.finalName}</name>
                         </configuration>

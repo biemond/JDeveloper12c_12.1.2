@@ -89,8 +89,8 @@
         <artifactId>ojmake</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojmake>/Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojmake</ojmake>
-          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/RestFulOWSM/Model/Model.jpr</files>
+          <ojmake>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
+          <files>${basedir}/Model.jpr</files>
           <usemaven>true</usemaven>
         </configuration>
         <executions>

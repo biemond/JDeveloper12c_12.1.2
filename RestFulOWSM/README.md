@@ -141,12 +141,23 @@ I use artifactory and uploaded all oracle jars to this shared repository.
             <oracle-maven-sync.failOnError>false</oracle-maven-sync.failOnError>
           </properties>      
         </profile>  
-    
+
+        <profile>
+          <id>local-weblogic</id>
+          <properties>
+             <wls.adminurl>t3://127.0.0.1:7101</wls.adminurl>
+             <wls.user>weblogic</wls.user>
+             <wls.password>weblogic1</wls.password>
+             <wls.middlewareHome>/Users/edwin/Oracle/JDevMiddleware12.1.2</wls.middlewareHome>
+             <wls.targets>DefaultServer</wls.targets>
+          </properties>
+        </profile>      
     
     
       </profiles>
     
       <activeProfiles>
+         <activeProfile>local-weblogic</activeProfile>
          <activeProfile>artifactory</activeProfile>
          <activeProfile>oracle-maven</activeProfile>
       </activeProfiles>

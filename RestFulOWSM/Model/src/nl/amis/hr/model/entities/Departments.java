@@ -20,7 +20,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * To create ID generator sequence "DEPARTMENTS_ID_SEQ_GEN":
@@ -41,19 +40,24 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Departments implements Serializable {
     @SuppressWarnings("oracle.jdeveloper.java.serialversionuid-stale")
     private static final long serialVersionUID = -1L;
+
+
     @Id
     @Column(name = "DEPARTMENT_ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Departments_Id_Seq_Gen")
     private Integer departmentId;
+
     @Column(name = "DEPARTMENT_NAME", nullable = false, length = 30)
     private String departmentName;
     @Column(name = "LOCATION_ID")
     private Integer locationId;
-    @XmlTransient
+
+//    @XmlTransient
     @ManyToOne
     @JoinColumn(name = "MANAGER_ID")
     private Employees manager;
-    @XmlTransient
+
+//    @XmlTransient
     @OneToMany(mappedBy = "department", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private List<Employees> employeesList;
 
@@ -89,22 +93,22 @@ public class Departments implements Serializable {
     }
 
 
-    @XmlTransient
+//    @XmlTransient
     public Employees getManager() {
         return manager;
     }
 
-    @XmlTransient
+//    @XmlTransient
     public void setManager(Employees manager) {
         this.manager = manager;
     }
 
-    @XmlTransient
+//    @XmlTransient
     public List<Employees> getEmployeesList() {
         return employeesList;
     }
 
-    @XmlTransient
+//    @XmlTransient
     public void setEmployeesList(List<Employees> employeesList) {
         this.employeesList = employeesList;
     }

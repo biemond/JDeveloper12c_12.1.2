@@ -56,7 +56,7 @@
                   <string v="+*"/>
                </list>
                <list n="url-path">
-                  <url path="src/"/>
+                  <url path="src/main/resources/"/>
                </list>
             </hash>
             <hash>

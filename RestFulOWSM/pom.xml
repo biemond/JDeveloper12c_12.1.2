@@ -4,36 +4,7 @@
   <groupId>nl.amis.hr</groupId>
   <artifactId>RestFulOWSM</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <build>
-    <resources>
-      <resource>
-        <directory>src/</directory>
-        <includes>
-          <include>*</include>
-        </includes>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>com.oracle.adf.plugin</groupId>
-        <artifactId>ojmake</artifactId>
-        <version>12.1.2-0-0</version>
-        <configuration>
-          <ojmake>/Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojmake</ojmake>
-          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/RestFulOWSM/RestFulOWSM.jws</files>
-          <usemaven>true</usemaven>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+
   <modules>
     <module>Model</module>
     <module>WebService</module>
