@@ -70,7 +70,6 @@
       <value n="ejbMetaDataPrefs" v="PREFASANNON"/>
       <value n="ejbVersion" v="3.0"/>
       <value n="ejbVersionMinor" v="0.1"/>
-      <url n="weblogicEjbJarNodeURL" path="src/META-INF/weblogic-ejb-jar.xml"/>
    </hash>
    <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
       <hash n="adfmContentSet">
@@ -184,6 +183,9 @@
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
          <list n="constituent-sets"/>
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
          <list n="url-path">
             <url path="src/"/>
          </list>

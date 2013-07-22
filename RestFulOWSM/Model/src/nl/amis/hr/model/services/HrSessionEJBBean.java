@@ -2,9 +2,6 @@ package nl.amis.hr.model.services;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
-import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -16,10 +13,10 @@ import javax.persistence.Query;
 import nl.amis.hr.model.entities.Departments;
 import nl.amis.hr.model.entities.Employees;
 
-@Stateless(name = "HrSessionEJB", mappedName = "RestFulOWSM-Model-HrSessionEJB")
-public class HrSessionEJBBean implements HrSessionEJB, HrSessionEJBLocal {
-    @Resource
-    SessionContext sessionContext;
+
+@Stateless(name = "HrSessionEJB")
+public class HrSessionEJBBean implements HrSessionEJBLocal {
+
     @PersistenceContext(unitName = "HrServer")
     private EntityManager em;
 

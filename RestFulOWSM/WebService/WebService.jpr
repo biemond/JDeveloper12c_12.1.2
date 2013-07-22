@@ -48,6 +48,9 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="nl.amis.hr.restful"/>
+   <hash n="ejbModuleContainer">
+      <value n="ejbVersion" v="3.0"/>
+   </hash>
    <hash n="oracle.ide.model.DependencyConfiguration">
       <list n="dependencyList">
          <hash>
@@ -64,36 +67,13 @@
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
-         <list n="constituent-sets">
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+*"/>
-               </list>
-               <list n="url-path">
-                  <url path="src/"/>
-               </list>
-            </hash>
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+**"/>
-               </list>
-               <list n="url-path">
-                  <url path="src/main/scripts/"/>
-               </list>
-            </hash>
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+pom.xml"/>
-               </list>
-               <list n="url-path">
-                  <url path="."/>
-               </list>
-            </hash>
-         </list>
+         <list n="constituent-sets"/>
          <list n="pattern-filters">
-            <string v="+*"/>
+            <string v="+pom.xml"/>
          </list>
-         <list n="url-path"/>
+         <list n="url-path">
+            <url path="."/>
+         </list>
       </hash>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
@@ -131,29 +111,26 @@
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
-         <list n="constituent-sets">
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+**"/>
-               </list>
-               <list n="url-path">
-                  <url path="src/test/java/"/>
-               </list>
-            </hash>
-            <hash>
-               <list n="pattern-filters">
-                  <string v="+**"/>
-               </list>
-               <list n="url-path">
-                  <url path="src/"/>
-               </list>
-            </hash>
+         <list n="constituent-sets"/>
+         <list n="pattern-filters">
+            <string v="+**"/>
          </list>
-         <list n="url-path"/>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
-      <list n="exportedReferences"/>
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="JAX-RS Jersey (Bundled)"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java EE"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JAX-RS Jersey (Bundled)"/>

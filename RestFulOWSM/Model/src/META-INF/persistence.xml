@@ -6,7 +6,6 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>java:/app/jdbc/jdbc/hrDS</jta-data-source>
         <class>nl.amis.hr.model.entities.Employees</class>
-
         <class>nl.amis.hr.model.entities.Departments</class>
         <properties>
             <property name="eclipselink.target-server" value="WebLogic_10"/>
@@ -21,7 +20,6 @@
     <persistence-unit name="HrLocal" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>nl.amis.hr.model.entities.Employees</class>
-
         <class>nl.amis.hr.model.entities.Departments</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>

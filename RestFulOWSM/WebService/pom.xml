@@ -52,8 +52,8 @@
           <webappDirectory>public_html/</webappDirectory>
         </configuration>
       </plugin>
-
     </plugins>
+    <resources/>
   </build>
 
 
