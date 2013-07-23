@@ -4,10 +4,8 @@ import com.sun.jersey.api.json.JSONWithPadding;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,21 +29,14 @@ public class Department {
 
     }
     
-    HrSessionEJBLocal hrBean = null;
+    @EJB( name = "HrSessionEJB")
+    HrSessionEJBLocal hrBean;
 
     @GET
     @Path("department/{id}")
     public  JSONWithPadding getDepartmentsById(  @PathParam("id") Integer departmentId,
                                                  @QueryParam("callback") String callback){
-        if(hrBean == null){
-            try {
-              InitialContext iniCtx = new InitialContext();  
-              hrBean = (HrSessionEJBLocal) iniCtx.lookup("java:comp/env/ejb/Hr");  
-            } catch (NamingException e) {
-                e.printStackTrace();
-            }
-        }
-        List<Departments> dept = hrBean.getDepartmentsFindById(departmentId);
+       List<Departments> dept = hrBean.getDepartmentsFindById(departmentId);
         if ( dept != null && dept.size() >0 ) {
            if (null == callback) {
               return new JSONWithPadding(new GenericEntity<Departments>(dept.get(0)) {});
@@ -62,14 +53,6 @@ public class Department {
 
     @GET
     public JSONWithPadding  getDepartments( @QueryParam("callback") String callback) {
-        if(hrBean == null){
-            try {
-              InitialContext iniCtx = new InitialContext();  
-              hrBean = (HrSessionEJBLocal) iniCtx.lookup("java:comp/env/ejb/Hr");  
-            } catch (NamingException e) {
-                e.printStackTrace();
-            }
-        }
 
         List<Departments> depts = hrBean.getDepartmentsFindAll();
         if (null == callback) {
