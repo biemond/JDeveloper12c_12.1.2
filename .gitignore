@@ -5,3 +5,5 @@ deploy/
 classes/
 target/
 
+
+*.jar

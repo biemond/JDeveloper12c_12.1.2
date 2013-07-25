@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="departments.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" topHeight="200px">
+                <f:facet name="center">
+                    <af:table value="#{bindings.departmentsFindAll.collectionModel}" var="row"
+                              rows="25"
+                              emptyText="#{bindings.departmentsFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              
+                              rowSelection="single" fetchSize="25" id="t1">
+
+                        <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentId.name}" sortable="true"
+                                   headerText="#{bindings.departmentsFindAll.hints.departmentId.label}" id="c2">
+                            <af:inputText value="#{row.bindings.departmentId.inputValue}"
+                                          label="#{bindings.departmentsFindAll.hints.departmentId.label}"
+                                          required="#{bindings.departmentsFindAll.hints.departmentId.mandatory}"
+                                          columns="#{bindings.departmentsFindAll.hints.departmentId.displayWidth}"
+                                          maximumLength="#{bindings.departmentsFindAll.hints.departmentId.precision}"
+                                          shortDesc="#{bindings.departmentsFindAll.hints.departmentId.tooltip}"
+                                          id="it1">
+                                <f:validator binding="#{row.bindings.departmentId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.departmentsFindAll.hints.departmentId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentName.name}"
+                                   sortable="true"
+                                   headerText="#{bindings.departmentsFindAll.hints.departmentName.label}" id="c3">
+                            <af:inputText value="#{row.bindings.departmentName.inputValue}"
+                                          label="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                                          required="#{bindings.departmentsFindAll.hints.departmentName.mandatory}"
+                                          columns="#{bindings.departmentsFindAll.hints.departmentName.displayWidth}"
+                                          maximumLength="#{bindings.departmentsFindAll.hints.departmentName.precision}"
+                                          shortDesc="#{bindings.departmentsFindAll.hints.departmentName.tooltip}"
+                                          id="it2">
+                                <f:validator binding="#{row.bindings.departmentName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsFindAll.hints.locationId.name}" sortable="true"
+                                   headerText="#{bindings.departmentsFindAll.hints.locationId.label}" id="c4">
+                            <af:inputText value="#{row.bindings.locationId.inputValue}"
+                                          label="#{bindings.departmentsFindAll.hints.locationId.label}"
+                                          required="#{bindings.departmentsFindAll.hints.locationId.mandatory}"
+                                          columns="#{bindings.departmentsFindAll.hints.locationId.displayWidth}"
+                                          maximumLength="#{bindings.departmentsFindAll.hints.locationId.precision}"
+                                          shortDesc="#{bindings.departmentsFindAll.hints.locationId.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.locationId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.departmentsFindAll.hints.locationId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </f:facet>
+                <f:facet name="top">
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="departmentsFindAll" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::t1"/>
+                        </af:panelHeader>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

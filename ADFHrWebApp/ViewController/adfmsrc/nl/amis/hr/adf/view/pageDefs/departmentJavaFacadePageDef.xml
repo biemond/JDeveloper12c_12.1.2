@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="departmentJavaFacadePageDef"
+                Package="nl.amis.hr.adf.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="JavaServiceFacade" id="JavaServiceFacadeIterator"
+              ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="JavaServiceFacadeIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="JavaServiceFacade" BeanClass="nl.amis.hr.model.entities.Departments"
+                      id="departmentsFindAllIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="departmentId">
+      <AttrNames>
+        <Item Value="departmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="departmentName">
+      <AttrNames>
+        <Item Value="departmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="locationId">
+      <AttrNames>
+        <Item Value="locationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="managerId">
+      <AttrNames>
+        <Item Value="managerId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="departmentsFindAllIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="departmentsFindAllIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="departmentsFindAllIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="departmentsFindAllIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="JavaServiceFacade"/>
+  </bindings>
+</pageDefinition>

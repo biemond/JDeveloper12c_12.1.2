@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68"
+                id="deptByLocation_deptByLocation_ExecuteWithParamsPageDef" Package="nl.amis.hr.adf.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="HrSessionEJBBean" id="HrSessionEJBBeanIterator"/>
+    <accessorIterator MasterBinding="HrSessionEJBBeanIterator" Binds="departmentsFindByLocationId" RangeSize="25"
+                      DataControl="HrSessionEJBBean" BeanClass="nl.amis.hr.model.entities.Departments"
+                      id="departmentsFindByLocationIdIterator" Refresh="ifNeeded"/>
+  </executables>
+  <bindings>
+    <action IterBinding="departmentsFindByLocationIdIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="locationId" NDValue="1700" NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
+</pageDefinition>

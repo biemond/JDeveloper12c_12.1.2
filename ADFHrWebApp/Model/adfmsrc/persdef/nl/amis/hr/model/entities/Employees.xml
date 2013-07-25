@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Employees"
+  Version="12.1.2.66.68">
+  <DesignTime>
+    <Attr Name="_DCName" Value="nl.amis.hr.adf.model.DataControls.HrSessionEJBBean"/>
+    <Attr Name="_SDName" Value="nl.amis.hr.model.entities.Employees"/>
+  </DesignTime>
+</PDefViewObject>

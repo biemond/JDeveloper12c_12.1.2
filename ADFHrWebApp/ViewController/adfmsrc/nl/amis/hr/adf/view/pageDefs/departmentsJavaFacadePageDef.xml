@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="departmentsJavaFacadePageDef"
+                Package="nl.amis.hr.adf.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="JavaServiceFacade" id="JavaServiceFacadeIterator"/>
+    <accessorIterator MasterBinding="JavaServiceFacadeIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="JavaServiceFacade" BeanClass="nl.amis.hr.model.entities.Departments"
+                      id="departmentsFindAllIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="departmentsFindAllIterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="nl.amis.hr.model.entities.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+          <Item Value="managerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

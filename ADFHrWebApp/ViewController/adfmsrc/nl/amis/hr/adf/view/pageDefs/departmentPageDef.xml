@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="departmentPageDef"
+                Package="nl.amis.hr.adf.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="HrSessionEJBBean" id="HrSessionEJBBeanIterator"
+              ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="HrSessionEJBBeanIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="HrSessionEJBBean" BeanClass="nl.amis.hr.model.entities.Departments"
+                      id="departmentsFindAllIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="departmentsFindAllIterator" StaticList="false" Uses="LOV_managerId" id="managerId"
+                  DTSupportsMRU="false"/>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="departmentId">
+      <AttrNames>
+        <Item Value="departmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="departmentName">
+      <AttrNames>
+        <Item Value="departmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsFindAllIterator" id="locationId">
+      <AttrNames>
+        <Item Value="locationId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="departmentsFindAllIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="departmentsFindAllIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="departmentsFindAllIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="departmentsFindAllIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

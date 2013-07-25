@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.66.68" id="DataBindings"
+             SeparateXMLFiles="false" Package="nl.amis.hr.adf.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/departments.jsf" usageId="nl_amis_hr_adf_view_departmentsPageDef"/>
+    <page path="/employees.jsf" usageId="nl_amis_hr_adf_view_employeesPageDef"/>
+    <page path="/department.jsf" usageId="nl_amis_hr_adf_view_departmentPageDef"/>
+    <page path="/departmentByLocationId.jsf" usageId="nl_amis_hr_adf_view_departmentByLocationIdPageDef"/>
+    <page path="/WEB-INF/deptByLocation.xml#deptByLocation@ExecuteWithParams"
+          usageId="nl_amis_hr_adf_view_deptByLocation_deptByLocation_ExecuteWithParamsPageDef"/>
+    <page path="/departmentsFragment.jsff" usageId="nl_amis_hr_adf_view_departmentsFragmentPageDef"/>
+    <page path="/departmentsJavaFacade.jsf" usageId="nl_amis_hr_adf_view_departmentsJavaFacadePageDef"/>
+    <page path="/departmentJavaFacade.jsf" usageId="nl_amis_hr_adf_view_departmentJavaFacadePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="nl_amis_hr_adf_view_departmentsPageDef" path="nl.amis.hr.adf.view.pageDefs.departmentsPageDef"/>
+    <page id="nl_amis_hr_adf_view_employeesPageDef" path="nl.amis.hr.adf.view.pageDefs.employeesPageDef"/>
+    <page id="nl_amis_hr_adf_view_departmentPageDef" path="nl.amis.hr.adf.view.pageDefs.departmentPageDef"/>
+    <page id="nl_amis_hr_adf_view_departmentByLocationIdPageDef"
+          path="nl.amis.hr.adf.view.pageDefs.departmentByLocationIdPageDef"/>
+    <page id="nl_amis_hr_adf_view_deptByLocation_deptByLocation_ExecuteWithParamsPageDef"
+          path="nl.amis.hr.adf.view.pageDefs.deptByLocation_deptByLocation_ExecuteWithParamsPageDef"/>
+    <page id="nl_amis_hr_adf_view_departmentsFragmentPageDef"
+          path="nl.amis.hr.adf.view.pageDefs.departmentsFragmentPageDef"/>
+    <page id="nl_amis_hr_adf_view_departmentsJavaFacadePageDef"
+          path="nl.amis.hr.adf.view.pageDefs.departmentsJavaFacadePageDef"/>
+    <page id="nl_amis_hr_adf_view_departmentJavaFacadePageDef"
+          path="nl.amis.hr.adf.view.pageDefs.departmentJavaFacadePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="JavaServiceFacade" path="nl.amis.hr.adf.model.JavaServiceFacade"/>
+    <dc id="HrSessionEJBBean" path="nl.amis.hr.adf.model.HrSessionEJBBean"/>
+  </dataControlUsages>
+</Application>

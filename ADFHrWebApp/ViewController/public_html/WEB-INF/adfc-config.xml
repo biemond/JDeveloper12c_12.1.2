@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="departments">
+    <page>/departments.jsf</page>
+  </view>
+
+  <view id="department">
+    <page>/department.jsf</page>
+  </view>
+  <view id="departmentByLocationId">
+    <page>/departmentByLocationId.jsf</page>
+  </view>
+  <view id="departmentJavaFacade">
+    <page>/departmentJavaFacade.jsf</page>
+  </view>
+  <view id="departmentsJavaFacade">
+    <page>/departmentsJavaFacade.jsf</page>
+  </view>
+</adfc-config>

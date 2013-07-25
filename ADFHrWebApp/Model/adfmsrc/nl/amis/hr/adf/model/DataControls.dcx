@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.1.2.66.68" id="DataControls"
+                    Package="nl.amis.hr.adf.model">
+  <AdapterDataControl id="HrSessionEJBBean" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="nl.amis.hr.model.services.HrSessionEJBLocal"
+                      BeanClass="nl.amis.hr.model.services.HrSessionEJBLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Employees"/>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Departments"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.x" ejb-name="HrSessionEJB" ejb-type="Session"
+                      ejb-business-interface="nl.amis.hr.model.services.HrSessionEJBLocal" ejb-interface-type="local"
+                      initial-context-factory="weblogic.jndi.WLInitialContextFactory"
+                      DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                      AccessMode="scrollable" EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="JavaServiceFacade" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="nl.amis.hr.model.services.JavaServiceFacade"
+                      BeanClass="nl.amis.hr.model.services.JavaServiceFacade"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Employees"/>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Departments"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="nl.amis.hr.model.services.JavaServiceFacade"
+                       DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                       AccessMode="scrollable" EagerPersist="true" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="JavaServiceFacadeAutoCommit" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="nl.amis.hr.model.services.JavaServiceFacadeAutoCommit"
+                      BeanClass="nl.amis.hr.model.services.JavaServiceFacadeAutoCommit"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Employees"/>
+      <TypeInfo FullName="nl.amis.hr.model.entities.Departments"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="nl.amis.hr.model.services.JavaServiceFacadeAutoCommit"
+                       DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                       AccessMode="scrollable" EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Polyline</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">91.65625</property>
+   </OverallProperties>
+   <View
+      id="View5">
+      <property
+         name="activityId">departments</property>
+      <property
+         name="page">/departments.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>departments&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">260.1914</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">department</property>
+      <property
+         name="page">/department.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>department&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">410.89062</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">departmentByLocationId</property>
+      <property
+         name="page">/departmentByLocationId.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>departmentByLocationId&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">595.28125</property>
+   </View>
+   <View
+      id="View7">
+      <property
+         name="activityId">departmentJavaFacade</property>
+      <property
+         name="page">/departmentJavaFacade.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>departmentJavaFacade&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">811.30664</property>
+   </View>
+   <View
+      id="View8">
+      <property
+         name="activityId">departmentsJavaFacade</property>
+      <property
+         name="page">/departmentsJavaFacade.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>departmentsJavaFacade&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">1025.2754</property>
+   </View>
+</SDM>

@@ -83,6 +83,7 @@
          <string v="Java"/>
          <string v="Maven"/>
          <string v="RESTWebServices"/>
+         <string v="WSPolicy"/>
          <string v="XML"/>
       </list>
    </hash>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.68" id="departmentByLocationIdPageDef"
+                Package="nl.amis.hr.adf.view.pageDefs">
+    <parameters/>
+    <executables>
+        <taskFlow id="deptByLocation1" taskFlowId="/WEB-INF/deptByLocation.xml#deptByLocation" activation="deferred"
+                  xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    </executables>
+    <bindings>
+    </bindings>
+</pageDefinition>

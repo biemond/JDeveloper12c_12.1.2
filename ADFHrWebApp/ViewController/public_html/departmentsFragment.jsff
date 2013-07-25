@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:table value="#{bindings.departmentsFindByLocationId.collectionModel}" var="row"
+            rows="#{bindings.departmentsFindByLocationId.rangeSize}"
+            emptyText="#{bindings.departmentsFindByLocationId.viewable ? 'No data to display.' : 'Access Denied.'}"
+            rowBandingInterval="0" selectedRowKeys="#{bindings.departmentsFindByLocationId.collectionModel.selectedRow}"
+            selectionListener="#{bindings.departmentsFindByLocationId.collectionModel.makeCurrent}"
+            rowSelection="single" fetchSize="#{bindings.departmentsFindByLocationId.rangeSize}" id="t1">
+    <af:column sortProperty="#{bindings.departmentsFindByLocationId.hints.departmentId.name}" sortable="true"
+               headerText="#{bindings.departmentsFindByLocationId.hints.departmentId.label}" id="c1">
+      <af:inputText value="#{row.bindings.departmentId.inputValue}"
+                    label="#{bindings.departmentsFindByLocationId.hints.departmentId.label}"
+                    required="#{bindings.departmentsFindByLocationId.hints.departmentId.mandatory}"
+                    columns="#{bindings.departmentsFindByLocationId.hints.departmentId.displayWidth}"
+                    maximumLength="#{bindings.departmentsFindByLocationId.hints.departmentId.precision}"
+                    shortDesc="#{bindings.departmentsFindByLocationId.hints.departmentId.tooltip}" id="it1">
+        <f:validator binding="#{row.bindings.departmentId.validator}"/>
+        <af:convertNumber groupingUsed="false"
+                          pattern="#{bindings.departmentsFindByLocationId.hints.departmentId.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.departmentsFindByLocationId.hints.departmentName.name}" sortable="true"
+               headerText="#{bindings.departmentsFindByLocationId.hints.departmentName.label}" id="c2">
+      <af:inputText value="#{row.bindings.departmentName.inputValue}"
+                    label="#{bindings.departmentsFindByLocationId.hints.departmentName.label}"
+                    required="#{bindings.departmentsFindByLocationId.hints.departmentName.mandatory}"
+                    columns="#{bindings.departmentsFindByLocationId.hints.departmentName.displayWidth}"
+                    maximumLength="#{bindings.departmentsFindByLocationId.hints.departmentName.precision}"
+                    shortDesc="#{bindings.departmentsFindByLocationId.hints.departmentName.tooltip}" id="it2">
+        <f:validator binding="#{row.bindings.departmentName.validator}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.departmentsFindByLocationId.hints.locationId.name}" sortable="true"
+               headerText="#{bindings.departmentsFindByLocationId.hints.locationId.label}" id="c3">
+      <af:inputText value="#{row.bindings.locationId.inputValue}"
+                    label="#{bindings.departmentsFindByLocationId.hints.locationId.label}"
+                    required="#{bindings.departmentsFindByLocationId.hints.locationId.mandatory}"
+                    columns="#{bindings.departmentsFindByLocationId.hints.locationId.displayWidth}"
+                    maximumLength="#{bindings.departmentsFindByLocationId.hints.locationId.precision}"
+                    shortDesc="#{bindings.departmentsFindByLocationId.hints.locationId.tooltip}" id="it3">
+        <f:validator binding="#{row.bindings.locationId.validator}"/>
+        <af:convertNumber groupingUsed="false"
+                          pattern="#{bindings.departmentsFindByLocationId.hints.locationId.format}"/>
+      </af:inputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.departmentsFindByLocationId.hints.managerId.name}" sortable="true"
+               headerText="#{bindings.departmentsFindByLocationId.hints.managerId.label}" id="c4">
+      <af:inputText value="#{row.bindings.managerId.inputValue}"
+                    label="#{bindings.departmentsFindByLocationId.hints.managerId.label}"
+                    required="#{bindings.departmentsFindByLocationId.hints.managerId.mandatory}"
+                    columns="#{bindings.departmentsFindByLocationId.hints.managerId.displayWidth}"
+                    maximumLength="#{bindings.departmentsFindByLocationId.hints.managerId.precision}"
+                    shortDesc="#{bindings.departmentsFindByLocationId.hints.managerId.tooltip}" id="it4">
+        <f:validator binding="#{row.bindings.managerId.validator}"/>
+        <af:convertNumber groupingUsed="false"
+                          pattern="#{bindings.departmentsFindByLocationId.hints.managerId.format}"/>
+      </af:inputText>
+    </af:column>
+  </af:table>
+</ui:composition>
