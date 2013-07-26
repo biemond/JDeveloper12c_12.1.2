@@ -6,56 +6,18 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <build>
-    <resources>
-      <resource>
-        <directory>src/</directory>
-        <includes>
-          <include>*</include>
-        </includes>
-      </resource>
-    </resources>
     <plugins>
-      <plugin>
-        <groupId>com.oracle.adf.plugin</groupId>
-        <artifactId>ojmake</artifactId>
-        <version>12.1.2-0-0</version>
-        <configuration>
-          <ojmake>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojmake
-          </ojmake>
-          <files>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws
-          </files>
-          <usemaven>
-            true
-          </usemaven>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>com.oracle.adf.plugin</groupId>
         <artifactId>ojdeploy</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojdeploy>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojdeploy
-          </ojdeploy>
-          <workspace>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws
-          </workspace>
-          <profile>
-            ADFHrWebApp_Project1_ADFHrWebApp
-          </profile>
-          <usemaven>
-            true
-          </usemaven>
+          <ojdeploy>/Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
+          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <profile>ADFHrWebApp_Project1_ADFHrWebApp</profile>
+          <usemaven>true</usemaven>
+          <nocompile>true</nocompile>
+          <nodatasources>true</nodatasources>
         </configuration>
         <executions>
           <execution>
@@ -86,4 +48,18 @@
       <type>war</type>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>hudson.alfa.local-releases</name>
+      <url>http://hudson:8081/artifactory/libs-release-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>hudson.alfa.local-snapshots</name>
+      <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

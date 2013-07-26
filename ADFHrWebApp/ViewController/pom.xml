@@ -11,7 +11,7 @@
       <groupId>nl.amis.adf.hr</groupId>
       <artifactId>Model</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <type>jar</type>
+      <type>ejb-client</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -193,9 +193,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.1.1</version>
         <configuration>
-          <webappDirectory>
-            public_html/
-          </webappDirectory>
+          <webappDirectory>public_html/</webappDirectory>
         </configuration>
       </plugin>
       <plugin>
@@ -203,15 +201,9 @@
         <artifactId>ojmake</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojmake>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojmake
-          </ojmake>
-          <files>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ViewController/ViewController.jpr
-          </files>
-          <usemaven>
-            true
-          </usemaven>
+          <ojmake>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
+          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ViewController/ViewController.jpr</files>
+          <usemaven>true</usemaven>
         </configuration>
         <executions>
           <execution>
@@ -227,21 +219,13 @@
         <artifactId>ojdeploy</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojdeploy>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojdeploy
-          </ojdeploy>
-          <workspace>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws
-          </workspace>
-          <project>
-            ViewController
-          </project>
-          <profile>
-            ADFHrWebApp_Project1_webapp
-          </profile>
-          <usemaven>
-            true
-          </usemaven>
+          <ojdeploy>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
+          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <project>ViewController</project>
+          <profile>ADFHrWebApp_war</profile>
+          <usemaven>true</usemaven>
+          <nocompile>true</nocompile>
+          <nodatasources>true</nodatasources>
         </configuration>
         <executions>
           <execution>
@@ -254,4 +238,18 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>hudson.alfa.local-releases</name>
+      <url>http://hudson:8081/artifactory/libs-release-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>hudson.alfa.local-snapshots</name>
+      <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

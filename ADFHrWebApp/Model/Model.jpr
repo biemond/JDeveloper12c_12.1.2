@@ -61,19 +61,33 @@
    </hash>
    <value n="jbo.CustomContextMenus" v="true"/>
    <value n="jbo.NoAttrEnumClasses" v="true"/>
-   <value n="JboProject" v="true"/>
    <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
       <value n="hasDataControls" v="true"/>
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
-         <list n="constituent-sets"/>
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+*"/>
+               </list>
+               <list n="url-path">
+                  <url path="."/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/main/scripts/"/>
+               </list>
+            </hash>
+         </list>
          <list n="pattern-filters">
             <string v="+*"/>
          </list>
-         <list n="url-path">
-            <url path="."/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
@@ -88,7 +102,6 @@
          <string v="XML"/>
       </list>
    </hash>
-   <value n="oracle.jbo.SavedPreferences" v="true"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
       <list n="copyRes">
          <string v=".cpx"/>
@@ -117,8 +130,11 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="ADFHrWebApp_Model">
+         <hash n="adflibModelHr">
             <value n="adflib-connectionDetails" v="true"/>
+            <list n="adflib-excludedConnections">
+               <string v="|"/>
+            </list>
             <value n="adflib-nonReusablesError" v="false"/>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -152,10 +168,12 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/ADFHrWebApp_Model.jar"/>
-            <hash n="LibraryDependencies"/>
+            <url n="jarURL" path="deploy/adflibModelHr.jar"/>
+            <hash n="LibraryDependencies">
+               <list n="dependencyList"/>
+            </hash>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="ADFHrWebApp_Model"/>
+            <value n="profileName" v="adflibModelHr"/>
          </hash>
          <hash n="ModelEJB">
             <hash n="archiveOptions">
@@ -178,6 +196,18 @@
                      <hash n="filters">
                         <list n="rules">
                            <hash>
+                              <value n="pattern" v="pom.xml"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="Model.jpr"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="persdef/"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
                               <value n="pattern" v="**"/>
                               <value n="type" v="0"/>
                            </hash>
@@ -194,7 +224,7 @@
          </hash>
       </hash>
       <list n="profileList">
-         <string v="ADFHrWebApp_Model"/>
+         <string v="adflibModelHr"/>
          <string v="ModelEJB"/>
       </list>
    </hash>
@@ -208,10 +238,8 @@
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
          <list n="constituent-sets"/>
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
          <list n="url-path">
+            <url path="src/test/java/"/>
             <url path="src/"/>
          </list>
       </hash>

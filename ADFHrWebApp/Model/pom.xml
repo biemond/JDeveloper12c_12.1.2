@@ -22,15 +22,9 @@
         <artifactId>ojmake</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojmake>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojmake
-          </ojmake>
-          <files>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/Model/Model.jpr
-          </files>
-          <usemaven>
-            true
-          </usemaven>
+          <ojmake>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
+          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/Model/Model.jpr</files>
+          <usemaven>true</usemaven>
         </configuration>
         <executions>
           <execution>
@@ -46,21 +40,13 @@
         <artifactId>ojdeploy</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojdeploy>
-            /Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojdeploy
-          </ojdeploy>
-          <workspace>
-            /Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws
-          </workspace>
-          <project>
-            Model
-          </project>
-          <profile>
-            ADFHrWebApp_Project1_adflib
-          </profile>
-          <usemaven>
-            true
-          </usemaven>
+          <ojdeploy>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
+          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <project>Model</project>
+          <profile>ModelEJB,adflibModelHr</profile>
+          <usemaven>true</usemaven>
+          <nocompile>true</nocompile>
+          <nodatasources>true</nodatasources>
         </configuration>
         <executions>
           <execution>
@@ -70,6 +56,15 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <!-- this is false by default -->
+          <generateClient>true</generateClient>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -173,5 +168,19 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  <packaging>jar</packaging>
+  <packaging>ejb</packaging>
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>hudson.alfa.local-releases</name>
+      <url>http://hudson:8081/artifactory/libs-release-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>hudson.alfa.local-snapshots</name>
+      <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
