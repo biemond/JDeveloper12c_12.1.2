@@ -12,3 +12,8 @@ RestFulOWSM
 
 JDeveloper RestFul / JPA / EJB project entirely build and deployed with oracle maven plugins.
   
+SOAPoverJMS
+-----------
+
+JAX-WS with SOAPoverJMS, A JAX-WS application with Web Service and Client project.
+  

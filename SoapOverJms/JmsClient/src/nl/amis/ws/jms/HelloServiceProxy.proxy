@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="HelloService_Service.xml"/>
+      <url path="HelloService.wsdl"/>
+      <url path="HelloService_schema1.xsd"/>
+      <url path="SayHelloResponse.java"/>
+      <url path="HelloServicePortClient.java"/>
+      <url path="SayHello.java"/>
+      <url path="HelloService.java"/>
+      <url path="package-info.java"/>
+      <url path="HelloService_Service.java"/>
+      <url path="ObjectFactory.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MIME"/>
+      <value n="FIXED_WSDL" v="true"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="HelloService_Service.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <url n="PROXY_ANNOTATED_CLASS_LOCATION" path="../../../../../../WebServices/src/nl/amis/ws/jms/HelloService.java"/>
+      <url n="PROXY_ANNOTATED_CLASS_PROJECT" path="../../../../../../WebServices/WebServices.jpr"/>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="HelloServicePortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="HelloServicePort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="nl.amis.ws.jms.HelloService"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="HelloServicePort"/>
+            <hash n="OPERATIONS">
+               <hash n="sayHello">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_POLICY">
+                  <value n="addressing"/>
+                  <hash n="GLOBAL_CONFIG_PROPERTIES"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="localhost" port="7101" path="/SoapOverJms-WebServices-context-root/HelloServicePort"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="HelloService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://jms.ws.amis.nl/"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../JmsClient.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="HelloService_schema1.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="HelloService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://jms.ws.amis.nl/}HelloService"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://jms.ws.amis.nl/}HelloServicePortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.sayHello.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="2f4ab144-0140-1000-8195-0a0532786695"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="HelloServicePort"/>
+               <value n="PORT_BINDING_NAME" v="{http://jms.ws.amis.nl/}HelloServicePortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.sayHello.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="localhost" port="7101" path="/SoapOverJms-WebServices-context-root/HelloServicePort"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://jms.ws.amis.nl/}HelloService"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="nl.amis.ws.jms.HelloServiceImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="nl.amis.ws.jms.HelloService"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="nl.amis.ws.jms.HelloService"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../JmsClient.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://jms.ws.amis.nl/"/>
+         <value n="WS_URI" v="HelloService"/>
+         <url n="WS_WSDL_FILE" path="HelloService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

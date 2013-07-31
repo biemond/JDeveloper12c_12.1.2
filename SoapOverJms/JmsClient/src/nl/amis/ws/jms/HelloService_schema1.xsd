@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://jms.ws.amis.nl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jms.ws.amis.nl/">
+  <xsd:complexType name="sayHello">
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="sayHelloResponse">
+    <xsd:sequence>
+      <xsd:element name="responseMessage" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="sayHello" type="ns0:sayHello"/>
+  <xsd:element name="sayHelloResponse" type="ns0:sayHelloResponse"/>
+</xsd:schema>

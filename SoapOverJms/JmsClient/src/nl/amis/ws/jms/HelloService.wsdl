@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://jms.ws.amis.nl/" name="HelloService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://jms.ws.amis.nl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://jms.ws.amis.nl/" schemaLocation="HelloService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="sayHello">
+    <part name="parameters" element="tns:sayHello"/>
+  </message>
+  <message name="sayHelloResponse">
+    <part name="parameters" element="tns:sayHelloResponse"/>
+  </message>
+  <portType name="HelloService">
+    <operation name="sayHello">
+      <input wsam:Action="http://jms.ws.amis.nl/HelloService/sayHelloRequest" message="tns:sayHello"/>
+      <output wsam:Action="http://jms.ws.amis.nl/HelloService/sayHelloResponse" message="tns:sayHelloResponse"/>
+    </operation>
+  </portType>
+  <binding name="HelloServicePortBinding" type="tns:HelloService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="sayHello">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloService">
+    <port name="HelloServicePort" binding="tns:HelloServicePortBinding">
+      <soap:address location="http://localhost:7101/SoapOverJms-WebServices-context-root/HelloServicePort"/>
+    </port>
+  </service>
+</definitions>
