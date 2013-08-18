@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @NamedQueries({
               @NamedQuery(name = "Employee.findAll", query = "select o from Employee o"),
+              @NamedQuery(name = "Employee.findById", query = "select o from Employee o where o.employeeId = :employeeId"),
               @NamedQuery(name = "Employee.findByLastname",
                           query = "select o from Employee o where o.lastName = :lastName ",
                           hints = { @QueryHint(name = "eclipselink.left-join-fetch", value = "o.managerDepartmentsList") })

@@ -20,9 +20,9 @@ import nl.amis.hr.model.services.HrSessionEJBLocal;
 
 
 @Path("department")
-@Produces( value = { "application/x-javascript",
-                     MediaType.APPLICATION_JSON, 
-                     MediaType.APPLICATION_XML})
+@Produces( value = { MediaType.APPLICATION_XML,
+                     MediaType.APPLICATION_JSON,
+                     "application/x-javascript"})
 @Stateless
 public class DepartmentRestService {
     public DepartmentRestService() {
@@ -33,6 +33,7 @@ public class DepartmentRestService {
     HrSessionEJBLocal hrBean;
 
     @GET
+    @Path("/")
     public JSONWithPadding  getDepartments( @QueryParam("callback") String callback) {
 
         List<Department> depts = hrBean.getDepartmentsFindAll();
@@ -58,7 +59,6 @@ public class DepartmentRestService {
             }
 
         }
-
         return null;
     }
 

@@ -22,4 +22,6 @@ public interface HrSessionEJBLocal {
     List<Department> getDepartmentsFindAll();
 
     List<Department> getDepartmentFindById(Integer departmentId);
+
+    List<Employee> getEmployeeFindById(Integer employeeId);
 }

@@ -55,7 +55,7 @@ public class HrSessionEJBBean implements HrSessionEJBLocal {
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<Employee> getEmployeesFindByLastname(String lastName) {
         return em.createNamedQuery("Employee.findByLastname", Employee.class).setParameter("lastName",
-                                                                                             lastName).getResultList();
+                                                                                           lastName).getResultList();
     }
 
     /** <code>select o from Departments o</code> */
@@ -68,6 +68,13 @@ public class HrSessionEJBBean implements HrSessionEJBLocal {
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<Department> getDepartmentFindById(Integer departmentId) {
         return em.createNamedQuery("Department.findById", Department.class).setParameter("departmentId",
-                                                                                           departmentId).getResultList();
+                                                                                         departmentId).getResultList();
+    }
+
+    /** <code>select o from Employee o where o.employeeId = :employeeId</code> */
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    public List<Employee> getEmployeeFindById(Integer employeeId) {
+        return em.createNamedQuery("Employee.findById", Employee.class).setParameter("employeeId",
+                                                                                     employeeId).getResultList();
     }
 }
