@@ -48,6 +48,11 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="nl.amis.hr"/>
+   <hash n="ejbModuleContainer">
+      <list n="toplinkJpaClientUrls">
+         <url path="src/nl/amis/hr/model/JavaServiceFacadeClient.java"/>
+      </list>
+   </hash>
    <hash n="oracle.ide.model.DependencyConfiguration">
       <list n="dependencyList">
          <hash>

@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import nl.amis.hr.model.entities.Departments;
-import nl.amis.hr.model.entities.Employees;
+import nl.amis.hr.model.entities.Department;
+import nl.amis.hr.model.entities.Employee;
 
 public class JavaServiceFacade {
     private final EntityManager em;
@@ -54,35 +54,35 @@ public class JavaServiceFacade {
         return entity;
     }
 
-    public void removeEmployees(Employees employees) {
-        employees = em.find(Employees.class, employees.getEmployeeId());
+    public void removeEmployees(Employee employees) {
+        employees = em.find(Employee.class, employees.getEmployeeId());
         em.remove(employees);
         commitTransaction();
     }
 
     /** <code>select o from Employees o</code> */
-    public List<Employees> getEmployeesFindAll() {
-        return em.createNamedQuery("Employees.findAll", Employees.class).getResultList();
+    public List<Employee> getEmployeesFindAll() {
+        return em.createNamedQuery("Employee.findAll", Employee.class).getResultList();
     }
 
-    public void removeDepartments(Departments departments) {
-        departments = em.find(Departments.class, departments.getDepartmentId());
+    public void removeDepartments(Department departments) {
+        departments = em.find(Department.class, departments.getDepartmentId());
         em.remove(departments);
         commitTransaction();
     }
 
     /** <code>select o from Departments o</code> */
-    public List<Departments> getDepartmentsFindAll() {
-        return em.createNamedQuery("Departments.findAll", Departments.class).getResultList();
+    public List<Department> getDepartmentsFindAll() {
+        return em.createNamedQuery("Department.findAll", Department.class).getResultList();
     }
 
     /** <code>select o from Departments o</code> */
-    public Departments getDepartmentsFindById(Integer departmentId) {
-        return em.find(Departments.class, departmentId);
+    public Department getDepartmentsFindById(Integer departmentId) {
+        return em.find(Department.class, departmentId);
     }
 
-    public List<Employees> getEmployeeFindByLastname(String lastName) {
-        return em.createNamedQuery("Employees.findByLastname", Employees.class)
+    public List<Employee> getEmployeeFindByLastname(String lastName) {
+        return em.createNamedQuery("Employee.findByLastname", Employee.class)
             .setParameter("lastName",lastName)
             .getResultList();
     }

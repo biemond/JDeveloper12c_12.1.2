@@ -19,6 +19,7 @@
 
 
     <build>
+        <finalName>RestFulOWSMEar-1.0-SNAPSHOT</finalName> 
         <plugins>
             <plugin>
                 <artifactId>maven-ear-plugin</artifactId>
@@ -43,6 +44,8 @@
                             <user>${wls.user}</user>
                             <password>${wls.password}</password>
                             <middlewareHome>${wls.middlewareHome}</middlewareHome>
+                            <upload>true</upload>
+                            <remote>true</remote>
                             <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
                             <targets>${wls.targets}</targets>
                             <verbose>true</verbose>

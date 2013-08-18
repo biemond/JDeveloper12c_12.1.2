@@ -5,8 +5,8 @@
     <persistence-unit name="HrServer">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>java:/app/jdbc/jdbc/hrDS</jta-data-source>
-        <class>nl.amis.hr.model.entities.Employees</class>
-        <class>nl.amis.hr.model.entities.Departments</class>
+        <class>nl.amis.hr.model.entities.Employee</class>
+        <class>nl.amis.hr.model.entities.Department</class>
         <properties>
             <property name="eclipselink.target-server" value="WebLogic_10"/>
             <property name="javax.persistence.jtaDataSource" value="jdbc/hrDS"/>
@@ -19,15 +19,14 @@
     </persistence-unit>
     <persistence-unit name="HrLocal" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>nl.amis.hr.model.entities.Employees</class>
-        <class>nl.amis.hr.model.entities.Departments</class>
+        <class>nl.amis.hr.model.entities.Employee</class>
+        <class>nl.amis.hr.model.entities.Department</class>
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:oracle:thin:@//dbagent2:1521/test.oracle.com"/>
-            <property name="javax.persistence.jdbc.user" value="hr"/>
-            <property name="javax.persistence.jdbc.password" value="221CE6B0A87AC61AE68FF3A130F7F666"/>
             <property name="eclipselink.logging.level" value="FINER"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.password" value="221CE6B0A87AC61AE68FF3A130F7F666"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//wls12:1521/test.oracle.com"/>
+            <property name="javax.persistence.jdbc.user" value="hr"/>
         </properties>
     </persistence-unit>
 </persistence>

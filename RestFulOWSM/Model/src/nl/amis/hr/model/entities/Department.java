@@ -26,18 +26,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  * CREATE SEQUENCE "DEPARTMENTS_ID_SEQ_GEN" INCREMENT BY 50 START WITH 50;
  */
 @Entity
-@NamedQueries({ @NamedQuery(name = "Departments.findAll", 
-                            query = "select o from Departments o") ,
+@NamedQueries({ @NamedQuery(name = "Department.findAll", query = "select o from Department o") ,
                 
-                @NamedQuery(name = "Departments.findById", 
-                            query = "select o from Departments o where o.departmentId = :departmentId",
-                            hints = { @QueryHint(name = "eclipselink.left-join-fetch", value = "o.employeesList")}) 
+                @NamedQuery(name = "Department.findById",
+                          query = "select o from Department o where o.departmentId = :departmentId",
+                          hints = { @QueryHint(name = "eclipselink.left-join-fetch", value = "o.employeesList")}) 
               })
 @SequenceGenerator(name = "Departments_Id_Seq_Gen", sequenceName = "DEPARTMENTS_SEQ", allocationSize = 1,
                    initialValue = 50)
 @Table(name = "DEPARTMENTS"  )
-@XmlRootElement
-public class Departments implements Serializable {
+@XmlRootElement(name = "department")
+public class Department implements Serializable {
     @SuppressWarnings("oracle.jdeveloper.java.serialversionuid-stale")
     private static final long serialVersionUID = -1L;
 
@@ -52,19 +51,17 @@ public class Departments implements Serializable {
     @Column(name = "LOCATION_ID")
     private Integer locationId;
 
-//    @XmlTransient
     @ManyToOne
     @JoinColumn(name = "MANAGER_ID")
-    private Employees manager;
+    private Employee manager;
 
-//    @XmlTransient
     @OneToMany(mappedBy = "department", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    private List<Employees> employeesList;
+    private List<Employee> employeesList;
 
-    public Departments() {
+    public Department() {
     }
 
-    public Departments(Integer departmentId, String departmentName, Integer locationId, Employees manager) {
+    public Department(Integer departmentId, String departmentName, Integer locationId, Employee manager) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.locationId = locationId;
@@ -93,33 +90,29 @@ public class Departments implements Serializable {
     }
 
 
-//    @XmlTransient
-    public Employees getManager() {
+    public Employee getManager() {
         return manager;
     }
 
-//    @XmlTransient
-    public void setManager(Employees manager) {
+    public void setManager(Employee manager) {
         this.manager = manager;
     }
 
-//    @XmlTransient
-    public List<Employees> getEmployeesList() {
+    public List<Employee> getEmployeesList() {
         return employeesList;
     }
 
-//    @XmlTransient
-    public void setEmployeesList(List<Employees> employeesList) {
+    public void setEmployeesList(List<Employee> employeesList) {
         this.employeesList = employeesList;
     }
 
-    public Employees addEmployees(Employees employees) {
+    public Employee addEmployees(Employee employees) {
         getEmployeesList().add(employees);
         employees.setDepartment(this);
         return employees;
     }
 
-    public Employees removeEmployees(Employees employees) {
+    public Employee removeEmployees(Employee employees) {
         getEmployeesList().remove(employees);
         employees.setDepartment(null);
         return employees;

@@ -10,8 +10,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import nl.amis.hr.model.entities.Departments;
-import nl.amis.hr.model.entities.Employees;
+import nl.amis.hr.model.entities.Department;
+import nl.amis.hr.model.entities.Employee;
 
 
 @Stateless(name = "HrSessionEJB")
@@ -47,27 +47,27 @@ public class HrSessionEJBBean implements HrSessionEJBLocal {
 
     /** <code>select o from Employees o</code> */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public List<Employees> getEmployeesFindAll() {
-        return em.createNamedQuery("Employees.findAll", Employees.class).getResultList();
+    public List<Employee> getEmployeesFindAll() {
+        return em.createNamedQuery("Employee.findAll", Employee.class).getResultList();
     }
 
     /** <code>select o from Employees o where o.lastName = :lastName </code> */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public List<Employees> getEmployeesFindByLastname(String lastName) {
-        return em.createNamedQuery("Employees.findByLastname", Employees.class).setParameter("lastName",
+    public List<Employee> getEmployeesFindByLastname(String lastName) {
+        return em.createNamedQuery("Employee.findByLastname", Employee.class).setParameter("lastName",
                                                                                              lastName).getResultList();
     }
 
     /** <code>select o from Departments o</code> */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public List<Departments> getDepartmentsFindAll() {
-        return em.createNamedQuery("Departments.findAll", Departments.class).getResultList();
+    public List<Department> getDepartmentsFindAll() {
+        return em.createNamedQuery("Department.findAll", Department.class).getResultList();
     }
 
     /** <code>select o from Departments o where o.departmentId = :departmentId</code> */
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public List<Departments> getDepartmentsFindById(Integer departmentId) {
-        return em.createNamedQuery("Departments.findById", Departments.class).setParameter("departmentId",
+    public List<Department> getDepartmentFindById(Integer departmentId) {
+        return em.createNamedQuery("Department.findById", Department.class).setParameter("departmentId",
                                                                                            departmentId).getResultList();
     }
 }

@@ -2,8 +2,8 @@ package nl.amis.hr.model;
 
 import java.util.List;
 
-import nl.amis.hr.model.entities.Departments;
-import nl.amis.hr.model.entities.Employees;
+import nl.amis.hr.model.entities.Department;
+import nl.amis.hr.model.entities.Employee;
 
 public class JavaServiceFacadeClient {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class JavaServiceFacadeClient {
 //            for (Employees employees : (List<Employees>) javaServiceFacade.getEmployeesFindAll()) {
 //                printEmployees(employees);
 //            }
-            for (Departments departments : (List<Departments>) javaServiceFacade.getDepartmentsFindAll()) {
+            for (Department departments : (List<Department>) javaServiceFacade.getDepartmentsFindAll()) {
                 printDepartments(departments);
             }
         } catch (Exception ex) {
@@ -20,7 +20,7 @@ public class JavaServiceFacadeClient {
         }
     }
 
-    private static void printEmployees(Employees employees) {
+    private static void printEmployees(Employee employees) {
         System.out.println("commissionPct = " + employees.getCommissionPct());
         System.out.println("email = " + employees.getEmail());
         System.out.println("employeeId = " + employees.getEmployeeId());
@@ -36,7 +36,7 @@ public class JavaServiceFacadeClient {
         System.out.println("department = " + employees.getDepartment());
     }
 
-    private static void printDepartments(Departments departments) {
+    private static void printDepartments(Department departments) {
         System.out.println("departmentId = " + departments.getDepartmentId());
         System.out.println("departmentName = " + departments.getDepartmentName());
         System.out.println("locationId = " + departments.getLocationId());

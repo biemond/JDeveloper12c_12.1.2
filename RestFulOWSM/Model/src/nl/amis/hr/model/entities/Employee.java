@@ -31,16 +31,17 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @NamedQueries({
-              @NamedQuery(name = "Employees.findAll", query = "select o from Employees o"),
-              @NamedQuery(name = "Employees.findByLastname", query = "select o from Employees o where o.lastName = :lastName ",
+              @NamedQuery(name = "Employee.findAll", query = "select o from Employee o"),
+              @NamedQuery(name = "Employee.findByLastname",
+                          query = "select o from Employee o where o.lastName = :lastName ",
                           hints = { @QueryHint(name = "eclipselink.left-join-fetch", value = "o.managerDepartmentsList") })
     })
 @SequenceGenerator(name = "Employees_Id_Seq_Gen", sequenceName = "EMPLOYEES_SEQ", allocationSize = 1,
                    initialValue = 50)
 
 @Table(name = "EMPLOYEES")
-@XmlRootElement
-public class Employees implements Serializable {
+@XmlRootElement(name = "employee")
+public class Employee implements Serializable {
     @SuppressWarnings("oracle.jdeveloper.java.serialversionuid-stale")
     private static final long serialVersionUID = -1L;
     @Column(name = "COMMISSION_PCT")
@@ -63,26 +64,26 @@ public class Employees implements Serializable {
     @Column(name = "PHONE_NUMBER", length = 20)
     private String phoneNumber;
     private Integer salary;
-    @XmlTransient
+
     @ManyToOne
     @JoinColumn(name = "MANAGER_ID")
-    private Employees manager;
-    @XmlTransient
+    private Employee manager;
+
     @OneToMany(mappedBy = "manager", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    private List<Employees> managerEmployeesList;
-    @XmlTransient
+    private List<Employee> managerEmployeesList;
+
     @OneToMany(mappedBy = "manager", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    private List<Departments> managerDepartmentsList;
-    @XmlTransient
+    private List<Department> managerDepartmentsList;
+
     @ManyToOne
     @JoinColumn(name = "DEPARTMENT_ID")
-    private Departments department;
+    private Department department;
 
-    public Employees() {
+    public Employee() {
     }
 
-    public Employees(Integer commissionPct, Departments department, String email, Integer employeeId, String firstName,
-                     Date hireDate, String jobId, String lastName, Employees manager, String phoneNumber,
+    public Employee(Integer commissionPct, Department department, String email, Integer employeeId, String firstName,
+                     Date hireDate, String jobId, String lastName, Employee manager, String phoneNumber,
                      Integer salary) {
         this.commissionPct = commissionPct;
         this.department = department;
@@ -169,66 +170,62 @@ public class Employees implements Serializable {
     }
 
     @XmlTransient
-    public Employees getManager() {
+    public Employee getManager() {
         return manager;
     }
 
-    @XmlTransient
-    public void setManager(Employees manager) {
+    public void setManager(Employee manager) {
         this.manager = manager;
     }
 
     @XmlTransient
-    public List<Employees> getManagerEmployeesList() {
+    public List<Employee> getManagerEmployeesList() {
         return managerEmployeesList;
     }
 
-    @XmlTransient
-    public void setManagerEmployeesList(List<Employees> managerEmployeesList) {
+    public void setManagerEmployeesList(List<Employee> managerEmployeesList) {
         this.managerEmployeesList = managerEmployeesList;
     }
 
-    public Employees addEmployees(Employees employees) {
+    public Employee addEmployees(Employee employees) {
         getManagerEmployeesList().add(employees);
         employees.setManager(this);
         return employees;
     }
 
-    public Employees removeEmployees(Employees employees) {
+    public Employee removeEmployees(Employee employees) {
         getManagerEmployeesList().remove(employees);
         employees.setManager(null);
         return employees;
     }
 
     @XmlTransient
-    public List<Departments> getManagerDepartmentsList() {
+    public List<Department> getManagerDepartmentsList() {
         return managerDepartmentsList;
     }
 
-    @XmlTransient
-    public void setManagerDepartmentsList(List<Departments> managerDepartmentsList) {
+    public void setManagerDepartmentsList(List<Department> managerDepartmentsList) {
         this.managerDepartmentsList = managerDepartmentsList;
     }
 
-    public Departments addDepartments(Departments departments) {
+    public Department addDepartments(Department departments) {
         getManagerDepartmentsList().add(departments);
         departments.setManager(this);
         return departments;
     }
 
-    public Departments removeDepartments(Departments departments) {
+    public Department removeDepartments(Department departments) {
         getManagerDepartmentsList().remove(departments);
         departments.setManager(null);
         return departments;
     }
 
     @XmlTransient
-    public Departments getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    @XmlTransient
-    public void setDepartment(Departments department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 

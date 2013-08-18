@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import nl.amis.hr.model.entities.Departments;
-import nl.amis.hr.model.entities.Employees;
+import nl.amis.hr.model.entities.Department;
+import nl.amis.hr.model.entities.Employee;
 
 @Local
 public interface HrSessionEJBLocal {
@@ -15,11 +15,11 @@ public interface HrSessionEJBLocal {
 
     <T> T mergeEntity(T entity);
 
-    List<Employees> getEmployeesFindAll();
+    List<Employee> getEmployeesFindAll();
 
-    List<Employees> getEmployeesFindByLastname(String lastName);
+    List<Employee> getEmployeesFindByLastname(String lastName);
 
-    List<Departments> getDepartmentsFindAll();
+    List<Department> getDepartmentsFindAll();
 
-    List<Departments> getDepartmentsFindById(Integer departmentId);
+    List<Department> getDepartmentFindById(Integer departmentId);
 }

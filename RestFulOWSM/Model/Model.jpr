@@ -168,9 +168,45 @@
             <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
             <value n="profileName" v="hrInterface"/>
          </hash>
+         <hash n="hrRestEJB">
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="true"/>
+            </hash>
+            <url n="earURL" path="deploy/hrRestEJB.ear"/>
+            <value n="enterpriseAppName" v="hrRestEJB"/>
+            <hash n="fileGroups">
+               <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="2"/>
+                        </hash>
+                        <hash>
+                           <value n="type" v="7"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Project Output"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="0"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="project-output"/>
+                     <value n="type" v="1"/>
+                  </hash>
+               </list>
+            </hash>
+            <url n="jarURL" path="deploy/hrRestEJB.jar"/>
+            <value n="profileClass" v="oracle.jdeveloper.deploy.ejb.EjbProfile"/>
+            <value n="profileName" v="hrRestEJB"/>
+         </hash>
       </hash>
       <list n="profileList">
          <string v="hrInterface"/>
+         <string v="hrRestEJB"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
