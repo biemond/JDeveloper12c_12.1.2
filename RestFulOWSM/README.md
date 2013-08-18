@@ -26,6 +26,23 @@ EAR
 
 Generate an EAR and deploys to the internal JDeveloper server. 
 
+Test
+----
+
+http://wls12:7201/WebService/resources/application.wadl  
+
+Accept: application/json  
+Accept: application/xml  
+
+http://wls12:7201/WebService/resources/department  
+http://wls12:7201/WebService/resources/department/10  
+
+With JSON padding  
+
+Accept: application/x-javascript  
+http://wls12:7201/WebService/resources/department?callback=123  
+http://wls12:7201/WebService/resources/department/10?callback=321  
+
  
 my maven env script
 -------------------
