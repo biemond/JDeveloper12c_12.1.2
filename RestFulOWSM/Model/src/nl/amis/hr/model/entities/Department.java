@@ -73,6 +73,11 @@ public class Department implements Serializable {
         return departmentId;
     }
 
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
+    }
+
+
     public String getDepartmentName() {
         return departmentName;
     }

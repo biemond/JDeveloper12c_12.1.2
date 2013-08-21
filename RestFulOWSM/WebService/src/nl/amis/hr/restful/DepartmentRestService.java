@@ -15,6 +15,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 
+import nl.amis.hr.examples.DepartmentExample;
 import nl.amis.hr.model.entities.Department;
 import nl.amis.hr.model.services.HrSessionEJBLocal;
 
@@ -32,8 +33,19 @@ public class DepartmentRestService {
     @EJB( name = "HrSessionEJB")
     HrSessionEJBLocal hrBean;
 
+
+    /**
+    * Returns the item if existing. Please be aware that this method is extremely
+    * expensive, so we can't guarantee that getting items is all the time possible.
+    *
+    * @response.representation.200.qname departments
+    * @response.representation.200.mediaType application/xml,application/json,application/x-javascript
+    * @response.representation.200.doc This is the representation returned by default
+    * @response.representation.200.example {@link DepartmentExample#SAMPLE_ITEM}
+    *
+    * @return the requested item if this service is available
+    */
     @GET
-    @Path("/")
     public JSONWithPadding  getDepartments( @QueryParam("callback") String callback) {
 
         List<Department> depts = hrBean.getDepartmentsFindAll();
@@ -44,6 +56,16 @@ public class DepartmentRestService {
          }
     }
 
+    /**
+    * Returns the item if existing. 
+    * 
+    * @response.representation.200.qname department
+    * @response.representation.200.mediaType application/xml,application/json,application/x-javascript
+    * @response.representation.200.doc This is the representation returned by default
+    * @response.representation.200.example {@link DepartmentExample#SAMPLE_ITEM}
+    *
+    * @return the requested item if this service is available
+    */
     @GET
     @Path("/{id}")
     public  JSONWithPadding getDepartmentById( @PathParam("id") Integer departmentId,

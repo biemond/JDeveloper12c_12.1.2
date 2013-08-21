@@ -1,7 +1,7 @@
 RestFulOWSM
 ===========
 
-JDeveloper RestFul / JPA / EJB project entirely build and deployed with Oracle maven plugins.  
+JDeveloper RestFul Services with JPA / EJB project entirely build and deployed with Oracle maven plugins, also custom WADL generation to fix collection of objects & Documentation    
 [requires a maven reposity with Oracle artifacts](http://docs.oracle.com/middleware/1212/core/MAVEN/config_maven.htm#MAVEN8853) 
 
 

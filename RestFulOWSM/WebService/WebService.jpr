@@ -67,13 +67,36 @@
    </hash>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
-         <list n="constituent-sets"/>
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+*"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/main/resources/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/main/scripts/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+pom.xml"/>
+               </list>
+               <list n="url-path">
+                  <url path="."/>
+               </list>
+            </hash>
+         </list>
          <list n="pattern-filters">
             <string v="+pom.xml"/>
          </list>
-         <list n="url-path">
-            <url path="."/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
@@ -85,6 +108,7 @@
          <string v="RESTWebServices"/>
          <string v="WSPolicy"/>
          <string v="XML"/>
+         <string v="XML_SCHEMA"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
@@ -193,17 +217,33 @@
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
-         <list n="constituent-sets"/>
-         <list n="pattern-filters">
-            <string v="+**"/>
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/test/java/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
          </list>
-         <list n="url-path">
-            <url path="src/"/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
+         <hash>
+            <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:ejb-client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
          <hash>
             <value n="id" v="JAX-RS Jersey (Bundled)"/>
             <value n="isJDK" v="false"/>
@@ -213,7 +253,23 @@
             <value n="isJDK" v="false"/>
          </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="${maven:maven.local.repo}nl/amis/hr/Model/1.0-SNAPSHOT/Model-1.0-SNAPSHOT.ejb-client"/>
+               </list>
+               <value n="description" v="nl.amis.hr:Model:1.0-SNAPSHOT:ejb-client"/>
+               <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:ejb-client"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
+         <hash>
+            <value n="id" v="nl.amis.hr:Model:1.0-SNAPSHOT:ejb-client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
          <hash>
             <value n="id" v="JAX-RS Jersey (Bundled)"/>
             <value n="isJDK" v="false"/>

@@ -121,6 +121,11 @@ public class Employee implements Serializable {
         return employeeId;
     }
 
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
+    }
+
+
     public String getFirstName() {
         return firstName;
     }

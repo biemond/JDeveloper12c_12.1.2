@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import nl.amis.hr.examples.EmployeeExample;
 import nl.amis.hr.model.entities.Employee;
 import nl.amis.hr.model.services.HrSessionEJBLocal;
 
@@ -27,12 +28,32 @@ public class EmployeeRestService {
     @EJB( name = "HrSessionEJB")
     HrSessionEJBLocal hrBean;
 
+    /**
+    * Returns the item if existing. 
+    * 
+    * @response.representation.200.qname employees
+    * @response.representation.200.mediaType application/xml,application/json
+    * @response.representation.200.doc This is the representation returned by default
+    * @response.representation.200.example {@link EmployeeExample#SAMPLE_ITEM}
+    *
+    *
+    * @return the requested item if this service is available
+    */
     @GET
-    @Path("/")
-    public List<Employee>  getEmployees() {
-        return hrBean.getEmployeesFindAll();
+    public List<Employee> getEmployees() {
+        return  hrBean.getEmployeesFindAll();
     }
 
+    /**
+    * Returns the item if existing. 
+    * 
+    * @response.representation.200.qname employee
+    * @response.representation.200.mediaType application/xml,application/json
+    * @response.representation.200.doc This is the representation returned by default
+    * @response.representation.200.example {@link EmployeeExample#SAMPLE_ITEM}
+    *
+    * @return the requested item if this service is available
+    */
     @GET
     @Path("/{id}")
     public  Employee getEmployeeById( @PathParam("id") Integer employeeId){

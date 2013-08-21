@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resourceDoc><classDocs><classDoc><className>nl.amis.hr.restful.EmployeeRestService</className><commentText><![CDATA[]]></commentText><methodDocs><methodDoc><methodName>getEmployees</methodName><commentText><![CDATA[Returns the item if existing.]]></commentText><responseDoc><returnDoc>the requested item if this service is available</returnDoc><representations><representation
+                                element="employees" status="200"
+                                mediaType="application/xml,application/json"><example>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;employee&gt;
+    &lt;employeeId&gt;100&lt;/employeeId&gt;
+    &lt;firstName&gt;Edwin&lt;/firstName&gt;
+    &lt;lastName&gt;Biemond&lt;/lastName&gt;
+&lt;/employee&gt;
+</example><doc>This is the representation returned by default</doc></representation></representations></responseDoc></methodDoc><methodDoc><methodName>getEmployeeById</methodName><commentText><![CDATA[Returns the item if existing.]]></commentText><responseDoc><returnDoc>the requested item if this service is available</returnDoc><representations><representation
+                                element="employee" status="200"
+                                mediaType="application/xml,application/json"><example>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;employee&gt;
+    &lt;employeeId&gt;100&lt;/employeeId&gt;
+    &lt;firstName&gt;Edwin&lt;/firstName&gt;
+    &lt;lastName&gt;Biemond&lt;/lastName&gt;
+&lt;/employee&gt;
+</example><doc>This is the representation returned by default</doc></representation></representations></responseDoc></methodDoc></methodDocs></classDoc><classDoc><className>nl.amis.hr.restful.DepartmentRestService</className><commentText><![CDATA[]]></commentText><methodDocs><methodDoc><methodName>getDepartments</methodName><commentText><![CDATA[Returns the item if existing. Please be aware that this method is extremely
+ expensive, so we can't guarantee that getting items is all the time possible.]]></commentText><responseDoc><returnDoc>the requested item if this service is available</returnDoc><representations><representation
+                                element="departments" status="200"
+                                mediaType="application/xml,application/json,application/x-javascript"><example>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;department&gt;
+    &lt;departmentId&gt;100&lt;/departmentId&gt;
+    &lt;departmentName&gt;Sales&lt;/departmentName&gt;
+    &lt;locationId&gt;1700&lt;/locationId&gt;
+&lt;/department&gt;
+</example><doc>This is the representation returned by default</doc></representation></representations></responseDoc></methodDoc><methodDoc><methodName>getDepartmentById</methodName><commentText><![CDATA[Returns the item if existing.]]></commentText><responseDoc><returnDoc>the requested item if this service is available</returnDoc><representations><representation
+                                element="department" status="200" mediaType="application/xml,application/json,application/x-javascript"><example>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;department&gt;
+    &lt;departmentId&gt;100&lt;/departmentId&gt;
+    &lt;departmentName&gt;Sales&lt;/departmentName&gt;
+    &lt;locationId&gt;1700&lt;/locationId&gt;
+&lt;/department&gt;
+</example><doc>This is the representation returned by default</doc></representation></representations></responseDoc></methodDoc></methodDocs></classDoc></classDocs></resourceDoc>
