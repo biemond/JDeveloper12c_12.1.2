@@ -117,7 +117,7 @@
             <value n="remoteDebuggingProfiling" v="false"/>
             <value n="runActiveFile" v="true"/>
             <value n="runAntBeforeRun" v="false"/>
-            <url n="runDirectoryURL" path="../../../../Oracle/JDevMiddleware12.1.2/jdeveloper/"/>
+            <url n="runDirectoryURL" path="../../../../../Oracle/JDevMiddleware12.1.2/jdeveloper/"/>
             <url n="targetURL" path="src/test/nl/amis/hr/model/test/TestDepartments.java"/>
             <value n="useProxy" v="true"/>
             <value n="VMName" v="client"/>

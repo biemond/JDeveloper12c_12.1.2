@@ -12,8 +12,8 @@
         <artifactId>ojdeploy</artifactId>
         <version>12.1.2-0-0</version>
         <configuration>
-          <ojdeploy>/Users/edwin/Oracle/JDevMiddleware12.1.2/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
-          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <ojdeploy>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
+          <workspace>${basedir}/ADFHrWebApp.jws</workspace>
           <profile>ADFHrWebApp_Project1_ADFHrWebApp</profile>
           <usemaven>true</usemaven>
           <nocompile>true</nocompile>

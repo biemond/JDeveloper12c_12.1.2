@@ -202,7 +202,7 @@
         <version>12.1.2-0-0</version>
         <configuration>
           <ojmake>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
-          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ViewController/ViewController.jpr</files>
+          <files>${basedir}/ViewController.jpr</files>
           <usemaven>true</usemaven>
         </configuration>
         <executions>
@@ -220,7 +220,7 @@
         <version>12.1.2-0-0</version>
         <configuration>
           <ojdeploy>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
-          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <workspace>${basedir}/../ADFHrWebApp.jws</workspace>
           <project>ViewController</project>
           <profile>ADFHrWebApp_war</profile>
           <usemaven>true</usemaven>

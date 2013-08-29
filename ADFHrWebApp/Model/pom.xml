@@ -23,7 +23,7 @@
         <version>12.1.2-0-0</version>
         <configuration>
           <ojmake>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
-          <files>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/Model/Model.jpr</files>
+          <files>${basedir}/Model.jpr</files>
           <usemaven>true</usemaven>
         </configuration>
         <executions>
@@ -41,7 +41,7 @@
         <version>12.1.2-0-0</version>
         <configuration>
           <ojdeploy>${oracle-maven-sync.oracleHome}/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
-          <workspace>/Users/edwin/projects/JDeveloper12c_12.1.2/ADFHrWebApp/ADFHrWebApp.jws</workspace>
+          <workspace>${basedir}/../ADFHrWebApp.jws</workspace>
           <project>Model</project>
           <profile>ModelEJB,adflibModelHr</profile>
           <usemaven>true</usemaven>
